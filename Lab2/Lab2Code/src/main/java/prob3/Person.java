@@ -33,6 +33,8 @@ public class Person {
     public void addPassport(String passportNumber) {
         if (this.passport == null) {
             passport = new Passport(passportNumber);
+        } else {
+            throw new IllegalArgumentException("Person Already has a Passport.");
         }
     }
 

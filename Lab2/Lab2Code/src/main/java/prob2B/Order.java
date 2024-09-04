@@ -35,7 +35,7 @@ public class Order {
         StringBuilder res = new StringBuilder("Order{" +
                 "orderDate=" + orderDate + ",");
         for (OrderLine orderLine : orderLines) {
-            res.append(" OrderLine{orderLineNum=").append(orderLine.getOrderLineNum()).append(", price=").append(orderLine.getPrice()).append(", quantity=").append(orderLine.getQuantity()).append("}");
+            res.append(" OrderLine{orderLineNum=").append(orderLine.getOrderLineNum()).append(", price=").append(orderLine.getPrice()).append(", quantity=").append(orderLine.getQuantity()).append(", Order=").append(orderLine.getOrder().getOrderDate()).append("}");
         }
         res.append('}');
         return res.toString();
