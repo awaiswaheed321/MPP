@@ -33,8 +33,12 @@ public class Employee {
 		return emp.name.equals(name) && emp.salary == salary;
 	}
 
-	@Override
-	public int hashCode() {
-		return name.hashCode() + Integer.hashCode(salary);
-	}
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + ((name == null) ? 0 : name.hashCode());
+    result = prime * result + salary;
+    return result;
+  }
 }
