@@ -1,4 +1,4 @@
-package com.test;
+package com.test.prob2;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -76,13 +76,6 @@ public class Product {
             return p1.getTitle().compareTo(p2.getTitle());
         });
         products.forEach(x -> System.out.println(x));
-
-        // Problem 4.
-        String[] names = { "Maral", "Alexis", "Tim", "Kyleen", "KRISTY" };
-        Arrays.sort(names, String::compareToIgnoreCase);
-
-        List<String> list = Arrays.asList(names);
-        list.forEach(System.out::println);
     }
 
 }

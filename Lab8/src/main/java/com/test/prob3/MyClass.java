@@ -1,4 +1,4 @@
-package com.test;
+package com.test.prob3;
 
 import java.util.function.Predicate;
 

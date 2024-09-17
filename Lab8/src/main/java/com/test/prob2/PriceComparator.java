@@ -1,4 +1,4 @@
-package com.test;
+package com.test.prob2;
 
 import java.util.Comparator;
 
