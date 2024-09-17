@@ -1,4 +1,6 @@
-package com.test;
+package com.test.prob3;
+
+import java.util.function.Predicate;
 
 public class MyClass {
     int x;
@@ -11,9 +13,12 @@ public class MyClass {
 
     // testing method to check the equality, write a lambda to do this
     public void myMethod(MyClass cl) {
-        // Implement
-
-
+        Predicate<Object> equalsPredicate = this::equals;
+        if(equalsPredicate.test(cl)) {
+            System.out.println("True");
+        } else {
+            System.out.println("False");
+        }
     }
 
     @Override
