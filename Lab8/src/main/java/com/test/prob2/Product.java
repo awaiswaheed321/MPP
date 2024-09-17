@@ -1,4 +1,4 @@
-package com.test;
+package com.test.prob2;
 
 public class Product {
     final String title;
