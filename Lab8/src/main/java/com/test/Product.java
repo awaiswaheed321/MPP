@@ -34,10 +34,11 @@ public class Product {
 
     public static void main(String[] args) {
         List<Product> products = Arrays.asList(
+            new Product("Pineapple", 4.0, 4),
             new Product("Apple", 20.0, 1),
+            new Product("Banana",12.0, 4),
             new Product("Banana",12.0, 2),
             new Product("Orange", 1.0, 3),
-            new Product("Pineapple", 4.0, 4),
             new Product("Grapes", 2.0, 5)
         );
 
