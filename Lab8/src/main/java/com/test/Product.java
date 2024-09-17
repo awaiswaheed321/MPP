@@ -34,30 +34,29 @@ public class Product {
 
     public static void main(String[] args) {
         List<Product> products = Arrays.asList(
-            new Product("Pineapple", 4.0, 4),
-            new Product("Apple", 20.0, 1),
-            new Product("Banana",12.0, 4),
-            new Product("Banana",12.0, 2),
-            new Product("Orange", 1.0, 3),
-            new Product("Grapes", 2.0, 5)
-        );
+                new Product("Pineapple", 4.0, 4),
+                new Product("Apple", 20.0, 1),
+                new Product("Banana", 12.0, 4),
+                new Product("Banana", 12.0, 2),
+                new Product("Orange", 1.0, 3),
+                new Product("Grapes", 2.0, 5));
 
-        // a. Sort the products by price
+        // Prob 2 - a. Sort the products by price
         products.sort(new PriceComparator());
 
         products.forEach(x -> System.out.println(x));
 
         System.out.println("\n\n");
 
-        // b. Sort the products by title
+        // Prob 2 - b. Sort the products by title
         Collections.sort(products, new TitleComparator());
 
         products.forEach(x -> System.out.println(x));
 
         System.out.println("\n\n");
 
-        // c. Implement the sort method so that only one type of Comparator is used for
-        // tasks a & b by referring comparator3 package
+        // Prob 2 - c. Implement the sort method so that only one type of Comparator is
+        // used for // tasks a & b by referring comparator3 package
         ProductInfo.sort(products, ProductInfo.SortMethod.BYTITLE);
         products.forEach(x -> System.out.println(x));
 
@@ -68,7 +67,8 @@ public class Product {
 
         System.out.println("\n\n");
 
-        // d. If the title is the same, use the model as another attribute to sort it.
+        // Prob 2 - d. If the title is the same, use the model as another attribute to
+        // sort it.
         Collections.sort(products, (p1, p2) -> {
             if (p1.getTitle().equals(p2.getTitle())) {
                 return Integer.compare(p1.getModel(), p2.getModel());
@@ -77,8 +77,12 @@ public class Product {
         });
         products.forEach(x -> System.out.println(x));
 
+        // Problem 4.
         String[] names = { "Maral", "Alexis", "Tim", "Kyleen", "KRISTY" };
         Arrays.sort(names, String::compareToIgnoreCase);
+
+        List<String> list = Arrays.asList(names);
+        list.forEach(System.out::println);
     }
 
 }

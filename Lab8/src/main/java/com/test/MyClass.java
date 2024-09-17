@@ -1,7 +1,5 @@
 package com.test;
 
-import java.util.Comparator;
-import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class MyClass {
