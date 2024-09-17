@@ -76,6 +76,9 @@ public class Product {
             return p1.getTitle().compareTo(p2.getTitle());
         });
         products.forEach(x -> System.out.println(x));
+
+        String[] names = { "Maral", "Alexis", "Tim", "Kyleen", "KRISTY" };
+        Arrays.sort(names, String::compareToIgnoreCase);
     }
 
 }

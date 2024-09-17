@@ -14,8 +14,12 @@ public class MyClass {
     }
 
     // testing method to check the equality, write a lambda to do this
-    public void myMethod(MyClass cl, Function<MyClass, Boolean> c) {
-        // System.out.println(this::equals(cl));
+    public void myMethod(MyClass cl) {
+        if (myCompare(cl::equals)) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
     }
 
     @Override
@@ -28,10 +32,14 @@ public class MyClass {
         return mc.x == x && mc.y.equals(y);
     }
 
+    public boolean myCompare(Predicate<Object> c) {
+        return c.test(this);
+    }
+
     public static void main(String[] args) {
         MyClass myclass = new MyClass(1, "A");
         MyClass myclass1 = new MyClass(1, "B");
-        // myclass.myMethod(myclass); // print true
-        // myclass.myMethod(myclass1); // print false
+        myclass.myMethod(myclass); // print true
+        myclass.myMethod(myclass1); // print false
     }
 }
