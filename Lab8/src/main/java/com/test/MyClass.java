@@ -1,5 +1,9 @@
 package com.test;
 
+import java.util.Comparator;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
 public class MyClass {
     int x;
     String y;
@@ -10,10 +14,8 @@ public class MyClass {
     }
 
     // testing method to check the equality, write a lambda to do this
-    public void myMethod(MyClass cl) {
-        // Implement
-
-
+    public void myMethod(MyClass cl, Function<MyClass, Boolean> c) {
+        // System.out.println(this::equals(cl));
     }
 
     @Override
@@ -29,7 +31,7 @@ public class MyClass {
     public static void main(String[] args) {
         MyClass myclass = new MyClass(1, "A");
         MyClass myclass1 = new MyClass(1, "B");
-        myclass.myMethod(myclass); // print true
-        myclass.myMethod(myclass1); // print false
+        // myclass.myMethod(myclass); // print true
+        // myclass.myMethod(myclass1); // print false
     }
 }
