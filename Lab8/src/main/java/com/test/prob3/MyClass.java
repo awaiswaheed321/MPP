@@ -13,7 +13,8 @@ public class MyClass {
 
     // testing method to check the equality, write a lambda to do this
     public void myMethod(MyClass cl) {
-        if (myCompare(cl::equals)) {
+        Predicate<Object> compare = this::equals;
+        if (compare.test(cl)) {
             System.out.println("true");
         } else {
             System.out.println("false");
@@ -28,10 +29,6 @@ public class MyClass {
             return false;
         MyClass mc = (MyClass) ob;
         return mc.x == x && mc.y.equals(y);
-    }
-
-    public boolean myCompare(Predicate<Object> c) {
-        return c.test(this);
     }
 
     public static void main(String[] args) {
