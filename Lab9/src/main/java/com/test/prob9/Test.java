@@ -17,6 +17,4 @@ public class Test {
     public static int calculateTotalCaloriesMethodReference() {
         return Dish.menu.stream().mapToInt(Dish::getCalories).sum();
     }
-
-
 }

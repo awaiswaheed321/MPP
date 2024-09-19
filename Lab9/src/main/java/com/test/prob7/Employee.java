@@ -1,55 +1,56 @@
 package com.test.prob7;
 
 public class Employee {
-	String firstName, lastName;
-	
+    String firstName, lastName;
 
-	int salary;
-	public Employee(String f, String l, int s) {
-		this.firstName = f;
-		this.lastName = l;
-		this.salary = s;
-	}
-	
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder("<");
-		sb.append("first name: ");
-		sb.append(firstName);
-		sb.append(" last name: ");
-		sb.append(lastName);
-		sb.append(" salary: ");
-		sb.append("" + salary+">");
-		return sb.toString();
-		
-	}
 
-	public String getFullName() {
-		return firstName + " " + lastName;
-	}
+    int salary;
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public Employee(String f, String l, int s) {
+        this.firstName = f;
+        this.lastName = l;
+        this.salary = s;
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("<");
+        sb.append("first name: ");
+        sb.append(firstName);
+        sb.append(" last name: ");
+        sb.append(lastName);
+        sb.append(" salary: ");
+        sb.append("" + salary + ">");
+        return sb.toString();
 
-	public String getLastName() {
-		return lastName;
-	}
+    }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
 
-	public int getSalary() {
-		return salary;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public void setSalary(int salary) {
-		this.salary = salary;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
 }
 
