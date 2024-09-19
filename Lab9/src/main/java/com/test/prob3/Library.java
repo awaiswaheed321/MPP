@@ -20,4 +20,12 @@ public class Library {
     public List<String> getBooks() {
         return books;
     }
+
+    @Override
+    public String toString() {
+        return "Library{" +
+                "name='" + name + '\'' +
+                ", books=" + books +
+                '}';
+    }
 }
