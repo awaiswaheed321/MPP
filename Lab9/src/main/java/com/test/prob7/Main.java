@@ -3,6 +3,7 @@ package com.test.prob7;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -21,13 +22,14 @@ public class Main {
 
         Predicate<Employee> salaryFilter = e -> e.getSalary() > 100000;
         Predicate<Employee> lastNameFilter = input -> !input.getLastName().isEmpty() && input.getLastName().toUpperCase().charAt(0) >= 'N' && input.getLastName().toUpperCase().charAt(0) <= 'Z';
+        Function<Employee, String> nameMapper = e -> e.getFirstName() + " " + e.getLastName();
 
         //your stream pipeline here
         String result = list.stream()
                 .filter(salaryFilter)
                 .filter(lastNameFilter)
                 .sorted(Comparator.comparing(Employee::getFirstName).thenComparing(Employee::getLastName))
-                .map(Employee::getFullName)
+                .map(nameMapper)
                 .collect(Collectors.joining(", "));
         System.out.println(result);
     }
