@@ -3,8 +3,6 @@ package com.test.prob7;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -29,10 +27,11 @@ public class Main {
                 .collect(Collectors.joining(", "));
         System.out.println("Prob A: Using Stream Pipeline: " + result);
 
-        String result2 = list.stream().filter(LambdaLibrary.getSalaryGreaterThanFilter(100000)).filter(LambdaLibrary.lastNameStartsInBetweenFilter('N', 'Z'))
-                .sorted(Comparator.comparing(Employee::getFirstName).thenComparing(Employee::getLastName))
-                .map(LambdaLibrary.nameMapper()).collect(Collectors.joining(", "));
-        System.out.println("Prob B: Result using lambda Library: " + result2);
+        List<Employee> res = LambdaLibrary.getSalaryGreaterThanFilter.apply(list, 100000);
+        res = LambdaLibrary.lastNAmeInBetweenFilter.apply(res, 'N', 'Z');
+        res = LambdaLibrary.sortedByName.apply(res);
+        String result1 = LambdaLibrary.nameMapper.apply(res);
+        System.out.println("Prob B: Using Lambda Library: " + result1);
     }
 
 }
