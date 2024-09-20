@@ -20,18 +20,19 @@ public class Main {
                 new Employee("Alice", "Richards", 101000),
                 new Employee("Donald", "Trump", 100000));
 
-        Predicate<Employee> salaryFilter = e -> e.getSalary() > 100000;
-        Predicate<Employee> lastNameFilter = input -> !input.getLastName().isEmpty() && input.getLastName().toUpperCase().charAt(0) >= 'N' && input.getLastName().toUpperCase().charAt(0) <= 'Z';
-        Function<Employee, String> nameMapper = e -> e.getFirstName() + " " + e.getLastName();
-
         //your stream pipeline here
         String result = list.stream()
-                .filter(salaryFilter)
-                .filter(lastNameFilter)
+                .filter(e -> e.getSalary() > 100000)
+                .filter(input -> !input.getLastName().isEmpty() && input.getLastName().toUpperCase().charAt(0) >= 'N' && input.getLastName().toUpperCase().charAt(0) <= 'Z')
                 .sorted(Comparator.comparing(Employee::getFirstName).thenComparing(Employee::getLastName))
-                .map(nameMapper)
+                .map(e -> e.getFirstName() + " " + e.getLastName())
                 .collect(Collectors.joining(", "));
-        System.out.println(result);
+        System.out.println("Prob A: Using Stream Pipeline: " + result);
+
+        String result2 = list.stream().filter(LambdaLibrary.getSalaryGreaterThanFilter(100000)).filter(LambdaLibrary.lastNameStartsInBetweenFilter('N', 'Z'))
+                .sorted(Comparator.comparing(Employee::getFirstName).thenComparing(Employee::getLastName))
+                .map(LambdaLibrary.nameMapper()).collect(Collectors.joining(", "));
+        System.out.println("Prob B: Result using lambda Library: " + result2);
     }
 
 }
