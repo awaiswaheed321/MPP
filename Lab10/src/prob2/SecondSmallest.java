@@ -4,7 +4,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-import com.test.classes.Employee;
+import Employee;
+
 public class SecondSmallest {
 
 	public static void main(String[] args) {
